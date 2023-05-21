@@ -1,9 +1,13 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Viewer {
     private String nickname;
     private int age;
     private int watchedMoviesCount;
+    private List<Cinema> watchedMovies = new ArrayList<>();
 
     public Viewer(String nickname, int age, int watchedMoviesCount) {
         this.nickname = nickname;
@@ -31,7 +35,8 @@ public class Viewer {
         return watchedMoviesCount;
     }
 
-    public void setWatchedMoviesCount(int watchedMoviesCount) {
-        this.watchedMoviesCount = watchedMoviesCount;
+    public void addMovie(Cinema movie) {
+        watchedMovies.add(movie);
+        watchedMoviesCount = watchedMovies.size();
     }
 }
